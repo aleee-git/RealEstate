@@ -20,11 +20,11 @@
 }
 
 .texto-entrada {
-    a{
+    a {
         color: black;
         display: block;
         margin-top: 2rem;
-        
+         
         @include tablet {
             margin-top: 0;
         }
