@@ -30,9 +30,11 @@
     padding: 1rem 3rem;
     text-align: center;
     margin-top: $separacion / 2;
+    border: none;
     display: $display;
 
     &:hover {
         background-color: darkolivegreen;
+        cursor: pointer;
     }
 }
