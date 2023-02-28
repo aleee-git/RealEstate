@@ -16,12 +16,19 @@
         margin: 0;
         text-align: center;
     }
+}
 
     .precio {
         color: $verde;
         font-weight: $bold;
         font-size: 3rem;
     }
+
+.resumen-propiedad {
+    .parrafo{
+        text-align: justify;
+    }
+}
 
     .iconos-caracteristicas {
         display: flex;
@@ -34,7 +41,7 @@
 
             img {
                 flex: 0 0 5rem;
-                margin-right: 1rem;
+                margin-right: 1.5rem;
             }
 
             p {
@@ -44,4 +51,4 @@
 
     }
 
-}
+

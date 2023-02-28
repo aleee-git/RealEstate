@@ -24,11 +24,14 @@
         color: black;
         display: block;
         margin-top: 2rem;
-        text-align: justify;
          
         @include tablet {
             margin-top: 0;
         }
+    }
+
+    p {
+        text-align:justify;
     }
 
     h4 {
