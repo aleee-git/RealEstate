@@ -7,6 +7,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function darkMode () {
+
+    const prefiereDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    if (prefiereDark.matches) {
+        document.body.classList.add('dark-mood');
+    } else {
+        document.body.classList.remove('dark-mood');
+    }
+
+    prefiereDark.addEventListener('change', function() {
+        if (prefiereDark.matches) {
+            document.body.classList.add('dark-mood');
+        } else {
+            document.body.classList.remove('dark-mood');
+        }
+    });
+
     const botonDark = document.querySelector('.dark-mode');
 
     botonDark.addEventListener('click', function(){
