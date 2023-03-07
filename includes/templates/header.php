@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏠 Real Estate 🏠</title>
     <!-- CSS Style-->
-    <link rel="stylesheet" href="/realestate/realestate/build/css/app.css">
+    <link rel="stylesheet" href="/realestate/build/css/app.css">
 </head>
 
 <body>
@@ -16,15 +16,15 @@
             <div class="barra">
 
                 <a href="/realestate/index.php">
-                    <img src="/realestate/realestate/build/img/logo.svg" alt="Logo">
+                    <img src="/realestate/build/img/logo.svg" alt="Logo">
                 </a>
 
                 <div class="mobile-menu">
-                    <img src="/realestate/realestate/build/img/barras.svg" alt="Barras">
+                    <img src="/realestate/build/img/barras.svg" alt="Barras">
                 </div>
 
                 <div class="derecha">
-                    <img class="dark-mode" src="/realestate/realestate/build/img/dark-mode.svg" alt="Dark-mode">
+                    <img class="dark-mode" src="/realestate/build/img/dark-mode.svg" alt="Dark-mode">
                     <nav class="navegacion">
                         <a href="about.php">About</a>
                         <a href="ads.php">Ads</a>
