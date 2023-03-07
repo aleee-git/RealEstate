@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog 😎</title>
-    <!-- CSS Style-->
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-
-                <a href="/">
-                    <img src="build/img/logo.svg" alt="Logo">
-                </a>
-
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="Barras">
-                </div>
-
-                <div class="derecha">
-                    <img class="dark-mode" src="/build/img/dark-mode.svg" alt="Dark-mode">
-                    <nav class="navegacion">
-                        <a href="about.html">About</a>
-                        <a href="ads.html">Ads</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contact.html">Contact</a>
-                    </nav>
-                </div>
-
-            </div>
-        </div>
-    </header>
+<?php 
+include './includes/templates/header.php'
+?>
 
     <main class="contenedor seccion contenido-centrado">
         <h1>Our Blog</h1>
@@ -41,9 +8,9 @@
         <article class="entrada-blog">
             <div class="imagen">
                 <picture>
-                    <source srcset="/build/img/blog1.webp" type="image/webp">
-                    <source srcset="/build/img/blog1.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/build/img/blog1.jpg" alt="Imagen">
+                    <source srcset="/realestate/build/img/blog1.webp" type="image/webp">
+                    <source srcset="/realestate/build/img/blog1.jpg" type="image/jpeg">
+                    <img loading="lazy" src="/realestate/build/img/blog1.jpg" alt="Imagen">
                 </picture>
             </div>
 
@@ -59,9 +26,9 @@
         <article class="entrada-blog">
             <div class="imagen">
                 <picture>
-                    <source srcset="/build/img/blog2.webp" type="image/webp">
-                    <source srcset="/build/img/blog2.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/build/img/blog2.jpg" alt="Imagen">
+                    <source srcset="/realestate/build/img/blog2.webp" type="image/webp">
+                    <source srcset="/realestate/build/img/blog2.jpg" type="image/jpeg">
+                    <img loading="lazy" src="/realestate/build/img/blog2.jpg" alt="Imagen">
                 </picture>
             </div>
 
@@ -77,9 +44,9 @@
         <article class="entrada-blog">
             <div class="imagen">
                 <picture>
-                    <source srcset="/build/img/blog3.webp" type="image/webp">
-                    <source srcset="/build/img/blog3.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/build/img/blog1.jpg" alt="Imagen">
+                    <source srcset="/realestate/build/img/blog3.webp" type="image/webp">
+                    <source srcset="/realestate/build/img/blog3.jpg" type="image/jpeg">
+                    <img loading="lazy" src="/realestate/build/img/blog1.jpg" alt="Imagen">
                 </picture>
             </div>
 
@@ -95,9 +62,9 @@
         <article class="entrada-blog">
             <div class="imagen">
                 <picture>
-                    <source srcset="/build/img/blog4.webp" type="image/webp">
-                    <source srcset="/build/img/blog4.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/build/img/blog2.jpg" alt="Imagen">
+                    <source srcset="/realestate/build/img/blog4.webp" type="image/webp">
+                    <source srcset="/realestate/build/img/blog4.jpg" type="image/jpeg">
+                    <img loading="lazy" src="/realestate/build/img/blog2.jpg" alt="Imagen">
                 </picture>
             </div>
 

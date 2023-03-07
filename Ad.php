@@ -1,66 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏠 Bienes Raíces 🏠</title>
-    <!-- CSS Style-->
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-
-<body>
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-
-                <a href="/">
-                    <img src="build/img/logo.svg" alt="Logo">
-                </a>
-
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="Barras">
-                </div>
-
-                <div class="derecha">
-                    <img class="dark-mode" src="/build/img/dark-mode.svg" alt="Dark-mode">
-                    <nav class="navegacion">
-                        <a href="about.html">About</a>
-                        <a href="ads.html">Ads</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contact.html">Contact</a>
-                    </nav>
-                </div>
-
-            </div>
-        </div>
-    </header>
+<?php 
+include './includes/templates/header.php'
+?>
 
     <main class="contenedor seccion contenido-centrado">
         <h1>Lake House</h1>
 
         <picture>
-            <source srcset="/build/img/destacada.webp" type="image/webp">
-            <source srcset="/build/img/destacada.jpg" type="image/jpeg">
-            <img loading="lazy" src="/build/img/destacada.jpg" alt="Destacada">
+            <source srcset="/realestate/build/img/destacada.webp" type="image/webp">
+            <source srcset="/realestate/build/img/destacada.jpg" type="image/jpeg">
+            <img loading="lazy" src="/realestate/build/img/destacada.jpg" alt="Destacada">
         </picture>
 
         <div class="resumen-propiedad">
             <p class="precio">$150,000.00</p>
             <ul class="iconos-caracteristicas">
                 <li>
-                    <img class="icono-dark" loading="lazy" src="/build/img/icono_wc.svg" alt="Icono">
+                    <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_wc.svg" alt="Icono">
                     <p>2</p>
                 </li>
 
                 <li>
-                    <img class="icono-dark" loading="lazy" src="/build/img/icono_estacionamiento.svg" alt="Icono">
+                    <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_estacionamiento.svg" alt="Icono">
                     <p>3</p>
                 </li>
 
                 <li>
-                    <img class="icono-dark" loading="lazy" src="/build/img/icono_dormitorio.svg" alt="Icono">
+                    <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_dormitorio.svg" alt="Icono">
                     <p>3</p>
                 </li>
             </ul>

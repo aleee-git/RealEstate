@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuncios 📰</title>
-    <!-- CSS Style-->
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-
-                <a href="/">
-                    <img src="build/img/logo.svg" alt="Logo">
-                </a>
-
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="Barras">
-                </div>
-
-                <div class="derecha">
-                    <img class="dark-mode" src="/build/img/dark-mode.svg" alt="Dark-mode">
-                    <nav class="navegacion">
-                        <a href="about.html">About</a>
-                        <a href="ads.html">Ads</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contact.html">Contact</a>
-                    </nav>
-                </div>
-
-            </div>
-        </div>
-    </header>
+<?php 
+include './includes/templates/header.php'
+?>
 
     <main class="contenedor seccion">
 
@@ -46,8 +13,8 @@
                 
                 <div class="anuncio">
                     <picture>
-                        <source srcset="/build/img/anuncio1.webp" type="image/webp">
-                        <source srcset="/build/img/anuncio1.jpg" type="image/jpg">
+                        <source srcset="/realestate/build/img/anuncio1.webp" type="image/webp">
+                        <source srcset="/realestate/build/img/anuncio1.jpg" type="image/jpg">
                         <img loading="lazy" src="build/img/anuncio1.jpg" alt="anuncio">
                     </picture>
     
@@ -83,8 +50,8 @@
 
                 <div class="anuncio">
                     <picture>
-                        <source srcset="/build/img/anuncio2.webp" type="image/webp">
-                        <source srcset="/build/img/anuncio2.jpg" type="image/jpg">
+                        <source srcset="/realestate/build/img/anuncio2.webp" type="image/webp">
+                        <source srcset="/realestate/build/img/anuncio2.jpg" type="image/jpg">
                         <img loading="lazy" src="build/img/anuncio2.jpg" alt="anuncio">
                     </picture>
     
@@ -120,8 +87,8 @@
 
                 <div class="anuncio">
                     <picture>
-                        <source srcset="/build/img/anuncio3.webp" type="image/webp">
-                        <source srcset="/build/img/anuncio3.jpg" type="image/jpg">
+                        <source srcset="/realestate/build/img/anuncio3.webp" type="image/webp">
+                        <source srcset="/realestate/build/img/anuncio3.jpg" type="image/jpg">
                         <img loading="lazy" src="build/img/anuncio3.jpg" alt="anuncio">
                     </picture>
     
@@ -156,8 +123,8 @@
 
                 <div class="anuncio">
                     <picture>
-                        <source srcset="/build/img/anuncio4.webp" type="image/webp">
-                        <source srcset="/build/img/anuncio4.jpg" type="image/jpg">
+                        <source srcset="/realestate/build/img/anuncio4.webp" type="image/webp">
+                        <source srcset="/realestate/build/img/anuncio4.jpg" type="image/jpg">
                         <img loading="lazy" src="build/img/anuncio4.jpg" alt="anuncio">
                     </picture>
     
@@ -193,8 +160,8 @@
 
                 <div class="anuncio">
                     <picture>
-                        <source srcset="/build/img/anuncio5.webp" type="image/webp">
-                        <source srcset="/build/img/anuncio5.jpg" type="image/jpg">
+                        <source srcset="/realestate/build/img/anuncio5.webp" type="image/webp">
+                        <source srcset="/realestate/build/img/anuncio5.jpg" type="image/jpg">
                         <img loading="lazy" src="build/img/anuncio5.jpg" alt="anuncio">
                     </picture>
     
@@ -230,8 +197,8 @@
 
                 <div class="anuncio">
                     <picture>
-                        <source srcset="/build/img/anuncio6.webp" type="image/webp">
-                        <source srcset="/build/img/anuncio6.jpg" type="image/jpg">
+                        <source srcset="/realestate/build/img/anuncio6.webp" type="image/webp">
+                        <source srcset="/realestate/build/img/anuncio6.jpg" type="image/jpg">
                         <img loading="lazy" src="build/img/anuncio6 .jpg" alt="anuncio">
                     </picture>
     
