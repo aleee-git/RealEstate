@@ -1,4 +1,11 @@
 <?php 
+
+// Conexion a DB
+include '../includes/templates/config/database.php';
+$db = conectarDB();
+// var_dump($db);
+
+
 include '../includes/templates/header.php';
 ?>
 
