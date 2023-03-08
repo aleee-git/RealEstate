@@ -205,12 +205,10 @@ include './includes/templates/header.php'
         </section>
     </div>
 
-    <?php
-
-    ?>
-
     <?php 
-    include 'includes/templates/footer.php'
+
+    include 'includes/templates/footer.php';
+    
     ?>
 
 
