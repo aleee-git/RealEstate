@@ -24,18 +24,21 @@ $fk_vendedor = '';
 // Se ejecuta despues de enviar los datos
 if ($_SERVER ['REQUEST_METHOD'] === 'POST') {
 
-// echo "<pre>";
-// var_dump($_POST);
-// echo "</pre>";
+    $numero = "1Holi3";
 
+    // Sanitizar Resultado = variable + filtro especifico
+    $sanitizar = filter_var($numero, FILTER_SANITIZE_NUMBER_INT);
+    //var_dump($sanitizar);
+
+// mysqli_real_escape_string evita que cualquier inyeccion SQL dañe la DB
 // Trae los valores ingresados - Asignar variables
-$titulo = $_POST['titulo'];
-$precio = $_POST['precio'];
-$descripcion = $_POST['descripcion'];
-$habitaciones = $_POST['habitaciones'];
-$toilet = $_POST['toilet'];
-$estacionamiento = $_POST['estacionamiento'];
-$fk_vendedor = $_POST['fk_vendedor'];
+$titulo = mysqli_real_escape_string($db, $_POST['titulo']);
+$precio = mysqli_real_escape_string($db, $_POST['precio']);
+$descripcion = mysqli_real_escape_string($db, $_POST['descripcion']);
+$habitaciones = mysqli_real_escape_string($db, $_POST['habitaciones']);
+$toilet = mysqli_real_escape_string($db, $_POST['toilet']);
+$estacionamiento = mysqli_real_escape_string($db, $_POST['estacionamiento']);
+$fk_vendedor = mysqli_real_escape_string($db, $_POST['fk_vendedor']);
 $creado = date('Y/m/d');
 
 // Validar formulario, que los campos no esten vacios y se guardan en el arreglo error
@@ -61,10 +64,6 @@ if(!$estacionamiento){
 if(!$fk_vendedor){
     $error[] = "Please choose a SALES PERSON";
 }
-
-// echo "<pre>";
-// var_dump($error);
-// echo "</pre>";
 
 // Se insertara con condicion, solo si el arreglo de error este vacio
 if(empty($error)) {
