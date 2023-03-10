@@ -3,7 +3,71 @@
 // Conexion a DB
 include '../includes/templates/config/database.php';
 $db = conectarDB();
-// var_dump($db);
+
+// Para errores
+$error = [];
+
+// Se ejecuta despues de enviar los datos
+if ($_SERVER ['REQUEST_METHOD'] === 'POST') {
+
+// echo "<pre>";
+// var_dump($_POST);
+// echo "</pre>";
+
+// Trae los valores ingresados - Asignar variables
+$titulo = $_POST['titulo'];
+$precio = $_POST['precio'];
+$descripcion = $_POST['descripcion'];
+$habitaciones = $_POST['habitaciones'];
+$toilet = $_POST['toilet'];
+$estacionamiento = $_POST['estacionamiento'];
+$fk_vendedor = $_POST['fk_vendedor'];
+
+// Validar formulario, que los campos no esten vacios y se guardan en el arreglo error
+if(!$titulo){
+    $error[] = "Please enter a valid TITLE";
+}
+if(!$precio){
+    $error[] = "Please enter a valid PRICE";
+}
+// VAlidar que la descripcion sea extensa
+if(strlen($descripcion) <= 25){
+    $error[] = "Please enter a valid or more especific DESCRIPTION";
+}
+if(!$habitaciones){
+    $error[] = "Please enter a valid number of ROOMS";
+}
+if(!$toilet){
+    $error[] = "Please enter a valid number of BATHROOMS";
+}
+if(!$estacionamiento){
+    $error[] = "Please enter a valid number of PARKING";
+}
+if(!$fk_vendedor){
+    $error[] = "Please choose a SALES PERSON";
+}
+
+// echo "<pre>";
+// var_dump($error);
+// echo "</pre>";
+
+// Se insertara con condicion, solo si el arreglo de error este vacio
+if(empty($error)) {
+    // Inserta en DB
+    $query = "INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, toilet, estacionamiento, fk_vendedor)
+    VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$toilet', '$estacionamiento', '$fk_vendedor')";
+    
+    // Confirmar Resultado
+    echo $query;
+
+    // Guardar en DB = conexion +  consulta
+    $result = mysqli_query($db, $query);
+
+    if ($result) {
+        echo "Well Done!";
+    }
+}
+}
 
 
 include '../includes/templates/header.php';
@@ -13,40 +77,47 @@ include '../includes/templates/header.php';
         <h1>Create Property</h1>
         <a href="index.php" class="boton boton-verde" style="display: inline-block;">Return</a>
 
-        <form class="formulario">
+        <!-- Mostrar Errores -->
+        <?php foreach($error as $errores): ?>
+            <div class="alerta error">
+                <?php echo $errores; ?>
+            </div>
+        <?php endforeach; ?>
+        
+        <form class="formulario" method="POST" action="./create.php">
             <fieldset>
                 <legend>General Info</legend>
 
                 <label for="titulo">Title</label>
-                <input id="titulo" type="text">
+               <input name="titulo" id="titulo" type="text">
 
                 <label for="precio">Price</label>
-                <input id="precio" type="number">
+                <input name="precio" id="precio" type="number">
 
                 <label for="imagen">Image</label>
-                <input id="imagen" type="file" accept="image/jpeg, image/png">
+                <input name="imagen" id="imagen" type="file" accept="image/jpeg, image/png">
 
                 <label for="descripcion">Description</label>
-                <textarea id="descripcion"></textarea>
+                <textarea name="descripcion" id="descripcion"></textarea>
             </fieldset>
 
             <fieldset>
                 <legend>Property Info</legend>
 
-                <label for="hab">Rooms</label>
-                <input id="hab" type="number" min="1" max="9">
+                <label for="habitaciones">Rooms</label>
+                <input name="habitaciones" id="habitaciones" type="number" min="1" max="9">
 
                 <label for="toilet">Bathrooms</label>
-                <input id="toilet" type="number" min="1" max="9">
+                <input name="toilet" id="toilet" type="number" min="1" max="9">
 
-                <label for="parqueo">Parking Area</label>
-                <input id="parqueo" type="number" min="1" max="9">
+                <label for="estacionamiento">Parking Area</label>
+                <input name="estacionamiento" id="estacionamiento" type="number" min="1" max="9">
             </fieldset>
 
             <fieldset>
                 <legend>Sales Person</legend>
 
-                <select id="">
+                <select name="fk_vendedor">
                     <option value="" disabled selected>--- Select One ---</option>
                     <option value="1">Juan</option>
                     <option value="2">Karen</option>
