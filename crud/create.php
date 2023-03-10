@@ -7,6 +7,15 @@ $db = conectarDB();
 // Para errores
 $error = [];
 
+// Inician vacias y luego se asigna el valor
+$titulo = '';
+$precio = '';
+$descripcion = '';
+$habitaciones = '';
+$toilet = '';
+$estacionamiento = '';
+$fk_vendedor = '';
+
 // Se ejecuta despues de enviar los datos
 if ($_SERVER ['REQUEST_METHOD'] === 'POST') {
 
@@ -89,29 +98,29 @@ include '../includes/templates/header.php';
                 <legend>General Info</legend>
 
                 <label for="titulo">Title</label>
-               <input name="titulo" id="titulo" type="text">
+               <input name="titulo" id="titulo" type="text" value="<?php echo $titulo; ?>">
 
                 <label for="precio">Price</label>
-                <input name="precio" id="precio" type="number">
+                <input name="precio" id="precio" type="number" value="<?php echo $precio; ?>">
 
                 <label for="imagen">Image</label>
                 <input name="imagen" id="imagen" type="file" accept="image/jpeg, image/png">
 
                 <label for="descripcion">Description</label>
-                <textarea name="descripcion" id="descripcion"></textarea>
+                <textarea name="descripcion" id="descripcion"><?php echo $descripcion; ?></textarea>
             </fieldset>
 
             <fieldset>
                 <legend>Property Info</legend>
 
                 <label for="habitaciones">Rooms</label>
-                <input name="habitaciones" id="habitaciones" type="number" min="1" max="9">
+                <input name="habitaciones" id="habitaciones" type="number" min="1" max="9" value="<?php echo $habitaciones; ?>">
 
                 <label for="toilet">Bathrooms</label>
-                <input name="toilet" id="toilet" type="number" min="1" max="9">
+                <input name="toilet" id="toilet" type="number" min="1" max="9" value="<?php echo $toilet; ?>">
 
                 <label for="estacionamiento">Parking Area</label>
-                <input name="estacionamiento" id="estacionamiento" type="number" min="1" max="9">
+                <input name="estacionamiento" id="estacionamiento" type="number" min="1" max="9" value="<?php echo $estacionamiento; ?>">
             </fieldset>
 
             <fieldset>
