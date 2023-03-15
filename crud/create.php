@@ -41,6 +41,8 @@ $estacionamiento = mysqli_real_escape_string($db, $_POST['estacionamiento']);
 $fk_vendedor = mysqli_real_escape_string($db, $_POST['fk_vendedor']);
 $creado = date('Y/m/d');
 
+$imagen = $_FILES['imagen'];
+
 // Validar formulario, que los campos no esten vacios y se guardan en el arreglo error
 if(!$titulo){
     $error[] = "Please enter a valid TITLE";
@@ -64,12 +66,35 @@ if(!$estacionamiento){
 if(!$fk_vendedor){
     $error[] = "Please choose a SALES PERSON";
 }
+if(!$imagen['name'] || $imagen['error']) {
+    $error[] = "IMAGE is required";
+}
+// Validar tamaño 1mb max - Convertir de bytes a Kb
+$tam = 1000 * 1000;
+if($imagen['size'] > $tam) {
+    $error[] = 'The image size is too large';
+}
+
 
 // Se insertara con condicion, solo si el arreglo de error este vacio
 if(empty($error)) {
+
+    // Crear carpeta para almacenar imagenes
+    $carpetaImagenes = '../imagenes/';
+
+    if(!is_dir($carpetaImagenes)) {
+        mkdir($carpetaImagenes);
+    }
+
+    // Nombre unico de imagen
+    $nombreImagen = md5(uniqid(rand(), true)).".jpg";
+
+    // Guardar imagen en el servidor
+    move_uploaded_file($imagen['tmp_name'], $carpetaImagenes.$nombreImagen);
+
     // Inserta en DB
-    $query = "INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, toilet, estacionamiento, creado, fk_vendedor)
-    VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$toilet', '$estacionamiento', '$creado', '$fk_vendedor')";
+    $query = "INSERT INTO propiedades (titulo, precio, imagen, descripcion, habitaciones, toilet, estacionamiento, creado, fk_vendedor)
+    VALUES ('$titulo', '$precio', '$nombreImagen', '$descripcion', '$habitaciones', '$toilet', '$estacionamiento', '$creado', '$fk_vendedor')";
 
     // Guardar en DB = conexion +  consulta
     $result = mysqli_query($db, $query);
@@ -98,7 +123,7 @@ include '../includes/templates/header.php';
             </div>
         <?php endforeach; ?>
         
-        <form class="formulario" method="POST" action="./create.php">
+        <form class="formulario" method="POST" action="./create.php" enctype="multipart/form-data">
             <fieldset>
                 <legend>General Info</legend>
 
