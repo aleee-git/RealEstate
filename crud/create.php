@@ -103,7 +103,7 @@ if(empty($error)) {
     if ($result) {
         //Confirmar Resultado
         //echo $query;
-        header('Location: /realestate/crud/index.php');
+        header('Location: /realestate/crud/index.php?mensaje=1');
     }
 }
 }

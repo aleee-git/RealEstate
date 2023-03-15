@@ -8,4 +8,9 @@
     &.error {
         background-color: rgb(233, 40, 40);
     }
+
+    &.exito {
+        background-color: $verde;
+        word-spacing: 10px;
+    }
 }
