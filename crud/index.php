@@ -44,7 +44,8 @@ include '../includes/templates/header.php';
                     <td> $ <?php echo $propiedad['precio'] ?> </td>
                     <td>
                         <a href="#" class="boton-rojo-block">Delete</a>
-                        <a href="#" class="boton-amarillo-block">Update</a>
+                        <!-- Se lleva el id seleccionado para no perder la info -->
+                        <a href="update.php?idPropiedad=<?php echo $propiedad['idPropiedad']  ?>" class="boton-amarillo-block">Update</a>
                     </td>
                 </tr>
                 <?php endwhile; ?>
