@@ -1,5 +1,15 @@
 <?php 
 
+// Importar
+include '../includes/templates/config/database.php';
+$db = conectarDB();
+
+// Consultar DB para extraer la info
+$query = "SELECT * FROM propiedades";
+
+// Guardar Resultado
+$result = mysqli_query($db, $query);
+
 // Mensaje de Alerta
 $mensaje = $_GET['mensaje'] ?? null;
 
@@ -25,16 +35,20 @@ include '../includes/templates/header.php';
             </thead>
 
             <tbody>
+
+                <?php while ($propiedad = mysqli_fetch_assoc($result)): ?>
                 <tr>
-                    <td> 1 </td>
-                    <td> Lake House </td>
-                    <td> <img src="/src/img/anuncio1.jpg" class="imagen-tabla"></td>
-                    <td> $100,000.00</td>
+                    <td> <?php echo $propiedad['idPropiedad'] ?> </td>
+                    <td> <?php echo $propiedad['titulo'] ?> </td>
+                    <td> <img src="/imagenes/<?php echo $propiedad['imagen']; ?>" class="imagen-tabla"> </td>
+                    <td> $ <?php echo $propiedad['precio'] ?> </td>
                     <td>
                         <a href="#" class="boton-rojo-block">Delete</a>
                         <a href="#" class="boton-amarillo-block">Update</a>
                     </td>
                 </tr>
+                <?php endwhile; ?>
+
             </tbody>
 
         </table>
@@ -42,5 +56,9 @@ include '../includes/templates/header.php';
     </main>
 
 <?php 
+
+// Cerrar conexion a DB
+mysqli_close($db);
+
 include '../includes/templates/footer.php';
 ?>
