@@ -20,6 +20,8 @@ include '../includes/templates/header.php';
         <h1>Real Estate Admin</h1>
         <?php if (intval($mensaje) === 1): ?>
             <p class="alerta exito">Property Registered</p>
+        <?php elseif (intval($mensaje) === 2): ?>
+            <p class="alerta exito">Property Updated</p>
         <?php endif; ?>
         <a href="create.php" class="boton boton-verde" style="display: inline-block;">New Property</a>
 

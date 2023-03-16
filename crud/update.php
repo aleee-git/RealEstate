@@ -80,15 +80,12 @@ if(!$estacionamiento){
 if(!$fk_vendedor){
     $error[] = "Please choose a SALES PERSON";
 }
-if(!$imagen['name'] || $imagen['error']) {
-    $error[] = "IMAGE is required";
-}
+
 // Validar tamaño 1mb max - Convertir de bytes a Kb
 $tam = 1000 * 1000;
 if($imagen['size'] > $tam) {
     $error[] = 'The image size is too large';
 }
-
 
 // Se insertara con condicion, solo si el arreglo de error este vacio
 if(empty($error)) {
@@ -107,8 +104,9 @@ if(empty($error)) {
     move_uploaded_file($imagen['tmp_name'], $carpetaImagenes.$nombreImagen);
 
     // Inserta en DB
-    $query = "INSERT INTO propiedades (titulo, precio, imagen, descripcion, habitaciones, toilet, estacionamiento, creado, fk_vendedor)
-    VALUES ('$titulo', '$precio', '$nombreImagen', '$descripcion', '$habitaciones', '$toilet', '$estacionamiento', '$creado', '$fk_vendedor')";
+    $query = "UPDATE propiedades set titulo = '$titulo', precio = $precio, descripcion = '$descripcion', 
+    habitaciones = $habitaciones, toilet = $toilet, estacionamiento = $estacionamiento, fk_vendedor = $fk_vendedor
+    WHERE idPropiedad = $idPropiedad";
 
     // Guardar en DB = conexion +  consulta
     $result = mysqli_query($db, $query);
@@ -117,7 +115,7 @@ if(empty($error)) {
     if ($result) {
         //Confirmar Resultado
         //echo $query;
-        header('Location: /realestate/crud/index.php?mensaje=1');
+        header('Location: /realestate/crud/index.php?mensaje=2');
     }
 }
 }
@@ -137,7 +135,7 @@ include '../includes/templates/header.php';
             </div>
         <?php endforeach; ?>
         
-        <form class="formulario" method="POST" action="./create.php" enctype="multipart/form-data">
+        <form class="formulario" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend>General Info</legend>
 
