@@ -75,7 +75,6 @@ if($imagen['size'] > $tam) {
     $error[] = 'The image size is too large';
 }
 
-
 // Se insertara con condicion, solo si el arreglo de error este vacio
 if(empty($error)) {
 
@@ -91,6 +90,7 @@ if(empty($error)) {
 
     // Guardar imagen en el servidor
     move_uploaded_file($imagen['tmp_name'], $carpetaImagenes.$nombreImagen);
+    
 
     // Inserta en DB
     $query = "INSERT INTO propiedades (titulo, precio, imagen, descripcion, habitaciones, toilet, estacionamiento, creado, fk_vendedor)

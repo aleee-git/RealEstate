@@ -147,7 +147,7 @@ include '../includes/templates/header.php';
 
                 <label for="imagen">Image</label>
                 <input name="imagen" id="imagen" type="file" accept="image/jpeg, image/png">
-                <img src="/imagenes/<?php echo $imagenPropiedad; ?> " class="imagen-small" alt="Imagen-Previa">
+                <img src="../imagenes/<?php echo $imagenPropiedad; ?> " class="imagen-small" alt="Imagen-Previa">
 
                 <label for="descripcion">Description</label>
                 <textarea name="descripcion" id="descripcion"><?php echo $descripcion; ?></textarea>

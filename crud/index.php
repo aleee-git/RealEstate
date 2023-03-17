@@ -42,7 +42,7 @@ include '../includes/templates/header.php';
                 <tr>
                     <td> <?php echo $propiedad['idPropiedad'] ?> </td>
                     <td> <?php echo $propiedad['titulo'] ?> </td>
-                    <td> <img src="/imagenes/<?php echo $propiedad['imagen']; ?>" class="imagen-tabla"> </td>
+                    <td> <img src="/realestate/imagenes/<?php echo $propiedad['imagen']; ?>" class="imagen-tabla"> </td>
                     <td> $ <?php echo $propiedad['precio'] ?> </td>
                     <td>
                         <a href="#" class="boton-rojo-block">Delete</a>
