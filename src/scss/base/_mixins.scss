@@ -34,7 +34,7 @@
     display: $display;
 
     &:hover {
-        background-color: darkolivegreen;
+        background-color: $verde;
         cursor: pointer;
     }
 }

@@ -7,10 +7,18 @@
     @include boton ($amarillo, block);
 }
 
+.boton-amarillo-block:hover, .boton-amarillo:hover {
+    background-color: orange;
+}
+
 .boton-verde {
-    @include boton ($verde, block);
+    @include boton (darkolivegreen, block);
 }
 
 .boton-rojo-block {
-    @include boton ($rojo, block);
+    @include boton (rgb(213, 49, 49), block);
+}
+
+.boton-rojo-block:hover {
+    background-color: red;
 }

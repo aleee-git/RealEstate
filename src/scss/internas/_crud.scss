@@ -6,7 +6,7 @@
     margin: 1rem 0;
 
     &.error {
-        background-color: rgb(233, 40, 40);
+        background-color: red;
     }
 
     &.exito {
@@ -19,21 +19,18 @@ table.propiedades {
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;
+    text-align: center;
 
     thead {
-        background-color: $verde;
+        background-color: rgb(200, 196, 191);
         
         th {
-            color: white;
+            color: black;
             padding: 2rem;
         }
-    }
-
-    .imagen-tabla {
-        width: 10rem;
     }
 }
 
 .imagen-small {
-    width: 20rem;
+    width: 10rem;
 }
