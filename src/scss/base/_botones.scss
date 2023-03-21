@@ -17,6 +17,7 @@
 
 .boton-rojo-block {
     @include boton (rgb(213, 49, 49), block);
+    width: 100%;
 }
 
 .boton-rojo-block:hover {
