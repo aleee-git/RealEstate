@@ -3,7 +3,6 @@ $inicio = true;
 
 include './includes/templates/header.php'
 ?>
-
     <main class="contenedor seccion">
         <h1>More About Us</h1>
         
@@ -36,110 +35,13 @@ include './includes/templates/header.php'
     <section class="seccion contenedor">
         <h2> Available Houses and Apartments </h2>
 
-        <div class="contenedor-anuncios">
+        <?php 
 
-            <div class="anuncio">
-                <picture>
-                    <source srcset="/realestate/build/img/anuncio1.webp" type="image/webp">
-                    <source srcset="/realestate/build/img/anuncio1.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/realestate//build/img/anuncio1.jpg" alt="Anuncio">
-                </picture>
+        // Limita la cantidad de anuncios a mostrar (3)
+        $limite = 3;
+        include './includes/templates/anuncio.php';
 
-                <div class="contenido-anuncio">
-                    <h3>Lake House</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nam voluptas omnis delectus obcaecati</p>
-                    <p class="precio">$150,000.00</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_wc.svg" alt="Icono">
-                            <p>2</p>
-                        </li>
-
-                        <li>
-                            <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_estacionamiento.svg" alt="Icono">
-                            <p>3</p>
-                        </li>
-
-                        <li>
-                            <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_dormitorio.svg" alt="Icono">
-                            <p>3</p>
-                        </li>
-                    </ul>
-
-                    <a href="#" class="boton boton-verde">See Property</a>
-
-                </div>
-            </div>
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="/realestate/build/img/anuncio2.webp" type="image/webp">
-                    <source srcset="/realestate/build/img/anuncio2.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/realestate/build/img/anuncio2.jpg" alt="Anuncio">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>Fancy Apartament</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nam voluptas omnis delectus obcaecati</p>
-                    <p class="precio">$150,000.00</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_wc.svg" alt="Icono">
-                            <p>2</p>
-                        </li>
-
-                        <li>
-                            <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_estacionamiento.svg" alt="Icono">
-                            <p>3</p>
-                        </li>
-
-                        <li>
-                            <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_dormitorio.svg" alt="Icono">
-                            <p>3</p>
-                        </li>
-                    </ul>
-
-                    <a href="#" class="boton boton-verde">See Property</a>
-
-                </div>
-            </div>
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="/realestate/build/img/anuncio3.webp" type="image/webp">
-                    <source srcset="/realestate/build/img/anuncio3.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/realestate/build/img/anuncio3.jpg" alt="Anuncio">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>Mansion with Pool</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nam voluptas omnis delectus obcaecati</p>
-                    <p class="precio">$150,000.00</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_wc.svg" alt="Icono">
-                            <p>2</p>
-                        </li>
-
-                        <li>
-                            <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_estacionamiento.svg" alt="Icono">
-                            <p>3</p>
-                        </li>
-
-                        <li>
-                            <img class="icono-dark" loading="lazy" src="/realestate/build/img/icono_dormitorio.svg" alt="Icono">
-                            <p>3</p>
-                        </li>
-                    </ul>
-
-                    <a href="#" class="boton boton-verde">See Property</a>
-
-                </div>
-            </div>
-        </div>
+        ?>
 
         <div class="alinear-derecha">
             <a href="ads.php" class="boton-amarillo">See All</a>
