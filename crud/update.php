@@ -97,14 +97,25 @@ if(empty($error)) {
         mkdir($carpetaImagenes);
     }
 
-    // Nombre unico de imagen
-    $nombreImagen = md5(uniqid(rand(), true)).".jpg";
+    $nombreImagen = '';
 
-    // Guardar imagen en el servidor
-    move_uploaded_file($imagen['tmp_name'], $carpetaImagenes.$nombreImagen);
+    // Eliminar imagen previa al actualizar 
+    if($imagen['name']) {
+        unlink($carpetaImagenes.$propiedad['imagen']);
+
+        // Nombre unico de imagen
+        $nombreImagen = md5(uniqid(rand(), true)).".jpg";
+
+        // Guardar imagen en el servidor
+        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes.$nombreImagen);
+        
+    // Si no mantiene imagen previa en caso de no hacer cambio
+    } else {
+        $nombreImagen = $propiedad['imagen'];
+    }
 
     // Inserta en DB
-    $query = "UPDATE propiedades set titulo = '$titulo', precio = $precio, descripcion = '$descripcion', 
+    $query = "UPDATE propiedades set titulo = '$titulo', precio = $precio, imagen = '$nombreImagen', descripcion = '$descripcion', 
     habitaciones = $habitaciones, toilet = $toilet, estacionamiento = $estacionamiento, fk_vendedor = $fk_vendedor
     WHERE idPropiedad = $idPropiedad";
 
