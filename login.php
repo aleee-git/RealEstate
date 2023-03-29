@@ -17,6 +17,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(!$password) {
         $errores[] = "Password is required";
     }
+
+    if(empty($errores)) {
+        // Validar si existe usuario
+        $query = "SELECT * FROM usuarios WHERE email = '$email' ";
+        $result = mysqli_query($db, $query);
+
+        if($result->num_rows) {
+            // Traer la info de la DB
+            $usuario = mysqli_fetch_assoc($result);
+
+            // Confirmar si es la misma password
+            $existe = password_verify($password, $usuario['password']);
+
+            if($existe) {
+                // El usuario existe
+            } else {
+                $errores[] = "Invalid password";
+            }
+        } else {
+            $errores[] = "User does not exist";
+        }
+    }
 }
 
 
