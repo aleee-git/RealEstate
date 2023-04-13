@@ -37,7 +37,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // llena un arreglo de sesion
                 $_SESSION['usuario'] = $usuario ['email'];    
-                $_SESSION['login'] = true;             
+                $_SESSION['login'] = true;       
+                
+                // Lo envia a index.php al iniciar sesion 
+                header('Location: /realestate/index.php');
+
             } else {
                 $errores[] = "Invalid password";
             }

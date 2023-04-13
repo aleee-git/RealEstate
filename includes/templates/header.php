@@ -1,3 +1,13 @@
+<?php 
+
+if (!isset($_SESSION)){
+    session_start();
+}
+
+$auth = $_SESSION['login'] ?? false;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +40,9 @@
                         <a href="ads.php">Ads</a>
                         <a href="blog.php">Blog</a>
                         <a href="contact.php">Contact</a>
+                        <?php if($auth): ?>
+                            <a href="salir.php">Log Out</a>
+                        <?php endif; ?>
                     </nav>
                 </div>
             </div>
