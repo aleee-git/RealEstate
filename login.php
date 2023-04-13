@@ -1,4 +1,5 @@
 <?php 
+
 // Conexion a DB
 include 'includes/templates/config/database.php';
 $db = conectarDB();
@@ -31,7 +32,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $existe = password_verify($password, $usuario['password']);
 
             if($existe) {
-                // El usuario existe
+                // El usuario existe, mantiene la info de la session
+                session_start();
+
+                // llena un arreglo de sesion
+                $_SESSION['usuario'] = $usuario ['email'];    
+                $_SESSION['login'] = true;             
             } else {
                 $errores[] = "Invalid password";
             }

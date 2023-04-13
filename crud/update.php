@@ -1,5 +1,12 @@
 <?php 
 
+include '../includes/templates/funciones.php';
+$auth = estadoAutenticado();
+
+if(!$auth) {
+    header('Location: /realestate/index.php');
+}
+
 // Validar el id solo sea entero
 $idPropiedad = $_GET['idPropiedad'];
 $idPropiedad = filter_var($idPropiedad, FILTER_VALIDATE_INT);

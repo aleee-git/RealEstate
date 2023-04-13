@@ -1,5 +1,12 @@
 <?php 
 
+include '../includes/templates/funciones.php';
+$auth = estadoAutenticado();
+
+if(!$auth) {
+    header('Location: /realestate/index.php');
+}
+
 // Conexion a DB
 include '../includes/templates/config/database.php';
 $db = conectarDB();
